@@ -1,0 +1,6 @@
+<div class="container">
+  <h2><%= @cocktail.name %></h2>
+  <p><%= @ingredient %></p>
+  <%= link_to "add ingredient", new_cocktail_dose_path(@cocktail) %>
+  <button class="btn"><%= link_to "Home Page", cocktails_path %></button>
+</div>
