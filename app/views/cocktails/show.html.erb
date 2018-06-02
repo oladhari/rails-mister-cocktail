@@ -1,6 +1,14 @@
 <div class="container">
   <h2><%= @cocktail.name %></h2>
-  <p><%= @ingredient %></p>
+  <% if @cocktail.photo.present? %>
+    <%= cl_image_tag @cocktail.photo, height: 300, width: 400, crop: :fill %>
+  <% end %>
+  <h3>Ingredients</h3>
+  <ul>
+  <% @cocktail.ingredients.each do |ingredient|  %>
+  <li><%= ingredient.name %> <%#= ingredient.dose.description %> </li>
+  <%end%>
+  </ul>
   <%= link_to "add ingredient", new_cocktail_dose_path(@cocktail) %>
   <button class="btn"><%= link_to "Home Page", cocktails_path %></button>
 </div>
