@@ -15,3 +15,25 @@
  */
 @import "bootstrap-sprockets";
 @import "bootstrap";
+@import "font-awesome-sprockets";
+@import "font-awesome";
+
+
+@import "components/index";
+
+
+html, body {
+  height: 100%;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+}
+.content-container {
+  flex: 1 0 auto;
+}
+
+.footer-container {
+  flex-shrink: 0;
+}

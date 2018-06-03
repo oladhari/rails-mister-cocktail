@@ -1,13 +1,31 @@
 <div>
   <h1>My Cocktails</h1>
-  <ul>
-  <% @cocktails.each do |cocktail| %>
-  <li><%= link_to cocktail.name , cocktail_path(cocktail) %>  |  <%= link_to "edit" , edit_cocktail_path(cocktail) %> | <%= link_to "Delete", cocktail_path(cocktail),
-      method: :delete,
-      data: { confirm: "Are you sure?" } %> </li>
+
+  <div class="row">
+    <% @cocktails.each do |cocktail| %>
+
+      <div class="col-xs-12 col-sm-4">
+        <% if cocktail.photo.present? %>
+        <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url("<%= cl_image_path cocktail.photo, height: 300, width: 400, crop: :fill %>");">
+          <% end %>
+
+          <div class="card-description">
+            <%= link_to cocktail.name, cocktail_path(cocktail) %>
+
+          </div>
+
+        </div>
+          <%= link_to "edit", edit_cocktail_path(cocktail) %> | <%= link_to "Delete", cocktail_path(cocktail),
+          method: :delete,
+          data: { confirm: "Are you sure?" } %>
+      </div>
+  </div>
+
   <% end %>
-  </ul>
+
   <h3><%= link_to "create new cocktail", new_cocktail_path %> </h3>
 
 
 </div>
+
+
