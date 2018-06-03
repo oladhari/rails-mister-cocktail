@@ -6,7 +6,7 @@
 
       <div class="col-xs-12 col-sm-4">
         <% if cocktail.photo.present? %>
-        <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url("<%= cl_image_path cocktail.photo, height: 300, width: 400, crop: :fill %>");">
+        <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cl_image_path cocktail.photo, height: 175, crop: :fill %>');">
           <% end %>
 
           <div class="card-description">
@@ -20,12 +20,7 @@
           data: { confirm: "Are you sure?" } %>
       </div>
   </div>
-
   <% end %>
-
-  <h3><%= link_to "create new cocktail", new_cocktail_path %> </h3>
-
-
 </div>
 
 
